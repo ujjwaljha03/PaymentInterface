@@ -46,8 +46,8 @@ public class PaymentController {
 
 		try { // Paypal client id , Paypal client secret key
 			APIContext apiContext = new APIContext(
-					"AUHmQhnleX6AJPnn32hwD7kP7ynmwis5K__f_vxpTWuuxUELmUYaGdTK2G68ivDWTQ5JShMqAvCppsgS",
-					"EERBXAV9j-zVe-BYM1zt-oIXb648kTzV6D4xmeysXakUpFuCAEM-4g9c9D2IPIW5Ii8niisbu8Vjuw9t", "sandbox");
+					"Your Paypal client Id",
+					"Your Paypal Secret Key", "sandbox");
 			Payment createdPayment = payment.create(apiContext);
 
 			return ResponseEntity.ok(createdPayment.getLinks().get(1).getHref());
@@ -61,8 +61,8 @@ public class PaymentController {
 			@RequestParam("PayerID") String payerId) {
 		try {
 			APIContext apiContext = new APIContext(
-					"AUHmQhnleX6AJPnn32hwD7kP7ynmwis5K__f_vxpTWuuxUELmUYaGdTK2G68ivDWTQ5JShMqAvCppsgS",
-					"EERBXAV9j-zVe-BYM1zt-oIXb648kTzV6D4xmeysXakUpFuCAEM-4g9c9D2IPIW5Ii8niisbu8Vjuw9t", "sandbox");
+					"Your Paypal Client id",
+					"Your Paypal Secret Key", "sandbox");
 			Payment payment = Payment.get(apiContext, paymentId);
 			PaymentExecution paymentExecution = new PaymentExecution();
 			paymentExecution.setPayerId(payerId);
